@@ -1,0 +1,308 @@
+/* ----------------------- FONTS ----------------------- */
+@font-face {
+    font-family: "VTB45Web";
+    src: url("../fonts/VTB45Web.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "VTB55Web";
+    src: url("../fonts/VTB55Web.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "VTB65Web";
+    src: url("../fonts/VTB65Web.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ----------------------- GENERAL ----------------------- */
+h1 {
+    font-size: 2.125rem;
+    line-height: 2.25rem;
+    font-family: "VTB65Web";
+}
+
+h2 {
+    font-size: 1.688rem;
+    line-height: 1.75rem;
+    font-family: "VTB45Web";
+}
+
+
+p, a, input, label {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "VTB45Web";
+}
+
+input:focus {
+    outline: none;
+}
+
+
+a:hover, button:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main_div {
+    height: 90%;
+}
+
+
+/* ----------------------- HEADER ----------------------- */
+
+.top-menu {
+    width: 100%;
+    height: 4.5rem;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #0345D5;
+    background: linear-gradient(90deg, rgba(1, 66, 211, 1) 0%, rgba(58, 133, 255, 1) 77%, rgba(181, 208, 254, 1) 100%);
+}
+
+.top-menu-logo {
+    width: 4.182rem;
+    height: 1.481rem;
+    margin: 1.323rem 0 0 2rem;
+    align-self: baseline;
+}
+
+.top-menu-text {
+    color: #ffffff;
+    margin-left: 0.75rem;
+}
+
+/* ----------------------- BODY ----------------------- */
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 5.938rem 0 3.563rem;
+}
+
+.page-content {
+    width: 31.5rem;
+    height: 31.5rem;
+    margin-top: 3.625rem;
+}
+
+.page-content-p {
+    color: #242424;
+    width: 100%;
+    max-width: 23rem;
+}
+
+.page-content-h1 {
+    margin: 0.5rem 0 2.5rem;    
+}
+
+.page-content-description {
+    color: #22242A;
+    margin-bottom: 1.25rem;
+}
+
+.page-content-input {
+    display: block;
+    width: 24rem;
+    height: 3.5rem;
+    border-radius: 4px;
+    border: 1px solid #B1B5BB;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+}
+
+.page-content-input-success {
+    border-color: #1BA049;
+}
+
+.page-content-input-error {
+    border-color: #D92020;
+}
+
+.input-label {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: "VTB45Web";
+    color: #7B7E86;
+    margin-bottom: 0.5rem;
+}
+
+.page-content-muted {
+    color: #7B7E86;
+}
+
+.page-content-actions {
+    display: flex;
+    align-items: center;
+    width: 24rem;
+    margin-bottom: 1.75rem;
+}
+
+.page-content-button {
+    display: inline-block;
+    font-family: "VTB55Web";
+    line-height: 1.5rem;
+    height: 3.5rem;
+    /* margin: 1.25rem 0 0 0; */
+    border-radius: 4px;
+    border: 1px solid #0062FF;
+}
+
+.page-content-button-blue {
+    background-color: #0062FF;
+    color: #ffffff;
+}
+
+.page-content-button-white {
+    width: 13.563rem;
+    color: #0062FF;
+    background-color: #ffffff;
+}
+
+.page-content-link {
+    display: block;
+    max-width: 9.438rem;
+}
+
+
+
+/* ----------------------- DECORATIVE IMAGE ----------------------- */
+.decorative_image {
+    width: 31.5rem;
+    height: 31.5rem;
+    margin-top: 3.625rem;
+    margin-right: 5.938rem;
+}
+
+
+@media (max-width: 1023px) {
+    .decorative_image {
+        display: none;
+    }
+}
+
+/* ----------------------- LOGIN ----------------------- */
+.login-password-wrapper {
+    margin-bottom: 2.5rem;
+}
+
+.login-button-blue {
+    width: 9.188rem;
+    margin-right: 1.25rem;
+}
+
+/* ----------------------- RESET PASSWORD ----------------------- */
+.reset_pass-button-blue {
+    width: 10.938rem;
+    margin-right: 2rem;
+}
+
+.reset_pass-instructions {
+    margin-bottom: 2.5rem;
+}
+
+/* ----------------------- REGISTRATION ----------------------- */
+.registration-content {
+    width: 100%;
+    max-width: 24rem;
+    height: 100%;
+    max-height: 42.5rem;
+    margin-right: 2rem;
+}
+
+.registration-password-warning {
+    color: #D92020;
+}
+
+.conditions_accept-wrapper {
+    display: flex;
+    align-items: flex-start;
+    user-select: none;
+}
+
+.conditions_accept-wrapper-custom_checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #0062FF;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28.5px 28.5px;
+    margin: 0 0.5rem -0.2rem 0;
+}
+
+.conditions_accept-wrapper-custom_checkbox:checked+label::before {
+    background-image: url("../images/Tick.png");
+}
+
+.conditions_accept-wrapper-first {
+    margin: 0.25rem 0 1rem;
+}
+
+.conditions_accept-wrapper-second {
+    margin-bottom: 2.5rem;
+}
+
+.conditions_accept-wrapper-label {
+    max-width: 20.75rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+.conditions_accept-wrapper-custom_checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+.registration-button-blue {
+    width: 11rem;
+    margin-right: 2rem;
+}
+
+/* ----------------------- PASSWORD REQUIREMENTS ----------------------- */
+
+.pass_requirements-content {
+    background-color: #F3F4F6;
+    width: 100%;
+    height: 23.75rem;
+    max-width: 24rem;
+    max-height: 23.75rem;
+    margin-top: -2.5rem;
+    padding: 1.25rem;
+}
+
+.pass_requirements-content-p {
+    font-family: "VTB65Web";
+}
+
+.pass_requirements-content-condition {
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.pass_requirements-content-condition-img {
+    width: 100%;
+    height: 100%;
+    max-width: 1.125rem;
+    max-height: 1.125rem;
+    margin-right: 0.5rem;
+}
+
+.pass_requirements-content-condition-p {
+    max-width: 19rem;
+}
