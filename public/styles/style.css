@@ -220,10 +220,6 @@ a:hover, button:hover {
     margin-right: 2rem;
 }
 
-.registration-password-warning {
-    color: #D92020;
-}
-
 .conditions_accept-wrapper {
     display: flex;
     align-items: flex-start;
@@ -259,6 +255,11 @@ a:hover, button:hover {
     max-width: 20.75rem;
     font-size: 1rem;
     line-height: 1.25rem;
+}
+
+
+.registration-password-warning {
+    color: #D92020;
 }
 
 .conditions_accept-wrapper-custom_checkbox {

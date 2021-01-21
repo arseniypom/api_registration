@@ -3,16 +3,30 @@ import PasswordRequirements from "./PasswordRequirements";
 
 
 function Registration() {
+    // Объект с пользовательскими данными
     const [inputInfo, setInputInfo] = useState({
         username: "",
         password: "",
         repeat_password: ""
     })
 
-    const [isPassEqual, setPassEqual] = useState(true)
+    const [isPassEqual, setPassEqual] = useState(true);
+    const [isSymbolTypes, setSymbolTypes] = useState(null);
+    const [isLengthCorrect, setLengthCorrect] = useState(null);
+    const [isPasswordContainUsername, setPasswordContainUsername] = useState(null);
+    const [passwordSafety, setPasswordSafety] = useState(0);
+    const [isSameSymbolsSequence, setSameSymbolsSequence] = useState(null);
 
+    // Обработка ввода (сохранение в переменную inputInfo) и проверка соответствия всем требованиям сложности
     function handleInput(event) {
         const {name, value} = event.target;
+        setPasswordSafety(0);
+        if (name === "password" && value.length > 0) {
+            setSymbolTypes(checkSymbolTypes(value))
+            setLengthCorrect(checkLength(value));
+            setPasswordContainUsername(checkUsernameInPassword(value));
+            setSameSymbolsSequence(checkSameSymbolsSequence(value.split("")));
+        }
         setInputInfo((prevValue) => {
             return {
                 ...prevValue,
@@ -20,6 +34,7 @@ function Registration() {
             }
         })
     }
+    // Обработка ввода (сохранение в переменную inputInfo) и проверка на совпадение паролей
     function handleInputAndCheckEquality(event) {
         const {name, value} = event.target;
         if (name === "password") {
@@ -34,6 +49,53 @@ function Registration() {
             }
         })
     }
+    // Проверка наличия цифр в вводе
+    function hasNumber(str) {
+        return /\d/.test(str);
+    }
+    function hasLowerCase(str) {
+        return str.toUpperCase() !== str;
+    }
+    function hasUpperCase(str) {
+        return str.toLowerCase() !== str;
+    }
+
+    // Проверка содержит ли пароль 3 типа символов
+    function checkSymbolTypes(password) {
+        const result = (hasNumber(password) && hasLowerCase(password) && hasUpperCase(password));
+        result && setPasswordSafety((prevValue) => (prevValue+=2));
+        return result;
+    }
+    // Проверка длины пароля
+    function checkLength(password) {
+        const result = password.length > 7;
+        result && setPasswordSafety((prevValue) => (prevValue+=2));
+        return result;
+    }
+    // Проверка не содержит ли пароль имя пользователя
+    function checkUsernameInPassword(password) {
+        const result = (password.indexOf(inputInfo.username) === -1);
+        result && setPasswordSafety((prevValue) => (prevValue+=2));
+        return result;
+    }
+
+    // Проверка максимального количества одинаковых символов подряд
+    const checkSameSymbolsSequence = (arr = []) => {
+        const res = arr.reduce((acc,val,ind) => {
+           if(acc.length && acc[acc.length-1][0] === val){
+              acc[acc.length-1].push(val);
+           }else{
+              acc.push([val]);
+           };
+           return acc;
+        },[]).reduce((acc, val) => {
+           return val.length > acc.length ? val : acc;
+        });
+        const result = res.length <= 3;
+        result && setPasswordSafety((prevValue) => (prevValue+=2));
+        return result;
+    }
+
     return <div className="body">
         <div className="registration-content">
             <p className="page-content-p">API Developer Portal</p>
@@ -50,6 +112,7 @@ function Registration() {
                 <label className="input-label" htmlFor="repeat_password">Подтверждение пароля</label>
                 <input onChange={handleInputAndCheckEquality} value={inputInfo.repeat_password} type="password" name="repeat_password" id="repeat_password" className="page-content-input" placeholder="Повторите пароль"></input>
             </div>
+            {/* Предупреждение в случае несоответствия паролей */}
             {!isPassEqual && <p className="registration-password-warning">Пароли не совпадают</p>}
             <div className="conditions_accept-wrapper conditions_accept-wrapper-first">
                 <input className="conditions_accept-wrapper-custom_checkbox" type="checkbox" id="terms_of_use" name="terms_of_use"/>
@@ -69,7 +132,13 @@ function Registration() {
                 </div>
             </div>
         </div>
-        <PasswordRequirements />
+        <PasswordRequirements
+            symbolsCheck={isSymbolTypes}
+            lengthCheck={isLengthCorrect}
+            usernameInPasswordCheck={isPasswordContainUsername}
+            passwordSafetyCheck={passwordSafety}
+            sameSymbolsCheck={isSameSymbolsSequence}  
+        />
     </div>
 }
 

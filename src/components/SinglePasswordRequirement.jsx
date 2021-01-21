@@ -1,9 +1,13 @@
 import React from "react";
 
-function RegistrationCondition(props) {
+function SinglePasswordRequirement(props) {
     let imgSource;
     if (props.status !== null) {
-
+        if (props.status) {
+            imgSource="images/Correct.png"
+        } else {
+            imgSource="images/Error.png"
+        }
     } else {
         imgSource="images/Arrow.png"
     }
@@ -13,4 +17,4 @@ function RegistrationCondition(props) {
 </div>
 }
 
-export default RegistrationCondition;
+export default SinglePasswordRequirement;
