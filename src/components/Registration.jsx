@@ -1,99 +1,49 @@
 import React, { useState } from "react";
+import PasswordsSet from "./PasswordsSet";
 import PasswordRequirements from "./PasswordRequirements";
 
 
 function Registration() {
     // Объект с пользовательскими данными
-    const [inputInfo, setInputInfo] = useState({
+    const [userInfo, setUserInfo] = useState({
         username: "",
         password: "",
-        repeat_password: ""
-    })
+        repeatPassword: ""
+    });
 
-    const [isPassEqual, setPassEqual] = useState(true);
+    // Результаты валидации
     const [isSymbolTypes, setSymbolTypes] = useState(null);
     const [isLengthCorrect, setLengthCorrect] = useState(null);
     const [isPasswordContainUsername, setPasswordContainUsername] = useState(null);
     const [passwordSafety, setPasswordSafety] = useState(0);
     const [isSameSymbolsSequence, setSameSymbolsSequence] = useState(null);
 
-    // Обработка ввода (сохранение в переменную inputInfo) и проверка соответствия всем требованиям сложности
-    function handleInput(event) {
-        const {name, value} = event.target;
-        setPasswordSafety(0);
-        if (name === "password" && value.length > 0) {
-            setSymbolTypes(checkSymbolTypes(value))
-            setLengthCorrect(checkLength(value));
-            setPasswordContainUsername(checkUsernameInPassword(value));
-            setSameSymbolsSequence(checkSameSymbolsSequence(value.split("")));
-        }
-        setInputInfo((prevValue) => {
+    function handleUsernameInput(event) {
+        const {value} = event.target;
+        setUserInfo((prevValue) => {
             return {
                 ...prevValue,
-                [name]: value
+                username: value
             }
-        })
-    }
-    // Обработка ввода (сохранение в переменную inputInfo) и проверка на совпадение паролей
-    function handleInputAndCheckEquality(event) {
-        const {name, value} = event.target;
-        if (name === "password") {
-            setPassEqual(value === inputInfo.repeat_password)
-        } else if (name === "repeat_password") {
-            setPassEqual(inputInfo.password === value)
-        }
-        setInputInfo((prevValue) => {
-            return {
-                ...prevValue,
-                [name]: value
-            }
-        })
-    }
-    // Проверка наличия цифр в вводе
-    function hasNumber(str) {
-        return /\d/.test(str);
-    }
-    function hasLowerCase(str) {
-        return str.toUpperCase() !== str;
-    }
-    function hasUpperCase(str) {
-        return str.toLowerCase() !== str;
-    }
-
-    // Проверка содержит ли пароль 3 типа символов
-    function checkSymbolTypes(password) {
-        const result = (hasNumber(password) && hasLowerCase(password) && hasUpperCase(password));
-        result && setPasswordSafety((prevValue) => (prevValue+=2));
-        return result;
-    }
-    // Проверка длины пароля
-    function checkLength(password) {
-        const result = password.length > 7;
-        result && setPasswordSafety((prevValue) => (prevValue+=2));
-        return result;
-    }
-    // Проверка не содержит ли пароль имя пользователя
-    function checkUsernameInPassword(password) {
-        const result = (password.indexOf(inputInfo.username) === -1);
-        result && setPasswordSafety((prevValue) => (prevValue+=2));
-        return result;
-    }
-
-    // Проверка максимального количества одинаковых символов подряд
-    const checkSameSymbolsSequence = (arr = []) => {
-        const res = arr.reduce((acc,val,ind) => {
-           if(acc.length && acc[acc.length-1][0] === val){
-              acc[acc.length-1].push(val);
-           }else{
-              acc.push([val]);
-           };
-           return acc;
-        },[]).reduce((acc, val) => {
-           return val.length > acc.length ? val : acc;
         });
-        const result = res.length <= 3;
-        result && setPasswordSafety((prevValue) => (prevValue+=2));
-        return result;
+    }
+
+    function handlePasswordInput(data) {
+        setUserInfo((prevValue) => {
+            return {
+                ...prevValue,
+                password: data.password,
+                repeatPassword: data.repeatPassword
+            }
+        });
+    }
+
+    function passwordValidation(symbolTypesResult, lengthCorrectResult, passwordContainUsernameResult, passwordSafetyResult, sameSymbolsSequenceResult) {
+        setSymbolTypes(symbolTypesResult);
+        setLengthCorrect(lengthCorrectResult);
+        setPasswordContainUsername(passwordContainUsernameResult);
+        setPasswordSafety(passwordSafetyResult);
+        setSameSymbolsSequence(sameSymbolsSequenceResult);
     }
 
     return <div className="body">
@@ -102,18 +52,15 @@ function Registration() {
             <h1 className="page-content-h1">Регистрация</h1>
             <div className="registration-input-wrapper" >
                 <label className="input-label" htmlFor="username">Адрес электронной почты</label>
-                <input onChange={handleInput} value={inputInfo.username} type="email" name="username" id="username" className="page-content-input" placeholder="Введите адрес электронной почты" autoFocus></input>
+                <input onChange={handleUsernameInput} value={userInfo.username} type="email" name="username" id="username" className="page-content-input" placeholder="Введите адрес электронной почты" autoFocus></input>
             </div>
-            <div className="registration-input-wrapper">
-                <label className="input-label" htmlFor="password">Пароль</label>
-                <input onChange={handleInput} value={inputInfo.password} type="password" name="password" id="password" className="page-content-input" placeholder="Придумайте пароль"></input>
-            </div>
-            <div className="registration-input-wrapper">
-                <label className="input-label" htmlFor="repeat_password">Подтверждение пароля</label>
-                <input onChange={handleInputAndCheckEquality} value={inputInfo.repeat_password} type="password" name="repeat_password" id="repeat_password" className="page-content-input" placeholder="Повторите пароль"></input>
-            </div>
-            {/* Предупреждение в случае несоответствия паролей */}
-            {!isPassEqual && <p className="registration-password-warning">Пароли не совпадают</p>}
+
+            <PasswordsSet 
+                username={userInfo.username}
+                savePassword={handlePasswordInput}
+                validation={passwordValidation}
+            />
+
             <div className="conditions_accept-wrapper conditions_accept-wrapper-first">
                 <input className="conditions_accept-wrapper-custom_checkbox" type="checkbox" id="terms_of_use" name="terms_of_use"/>
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
@@ -124,6 +71,7 @@ function Registration() {
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
                 <label className="conditions_accept-wrapper-label" htmlFor="organization_regulations">Принимаю <a className="" href="">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></label>
             </div>
+
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue registration-button-blue" type="submit">Регистрация</button>
                 <div className="page-content-actions-login">

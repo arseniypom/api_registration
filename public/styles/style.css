@@ -258,10 +258,6 @@ a:hover, button:hover {
 }
 
 
-.registration-password-warning {
-    color: #D92020;
-}
-
 .conditions_accept-wrapper-custom_checkbox {
     position: absolute;
     z-index: -1;
@@ -272,6 +268,13 @@ a:hover, button:hover {
 .registration-button-blue {
     width: 11rem;
     margin-right: 2rem;
+}
+
+/* ----------------------- PASSWORD SET ----------------------- */
+
+
+.password-warning {
+    color: #D92020;
 }
 
 /* ----------------------- PASSWORD REQUIREMENTS ----------------------- */
