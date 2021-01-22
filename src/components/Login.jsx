@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from "./Image";
 
 
+
 function Login() {
+    const eye = <img src="images/closed_eye.png" alt=""></img>;
+    const [passwordShown, setPasswordShown] = useState(false);
+    const togglePasswordVisiblity = () => {
+      setPasswordShown(passwordShown ? false : true);
+    };
     return <div className="body">
         <Image />
         <div className="page-content">
@@ -10,8 +16,13 @@ function Login() {
             <h1 className="page-content-h1">Войти в аккаунт</h1>
             <input type="email" name="username" className="page-content-input" placeholder="Введите логин" autoFocus></input>
             <div className="login-password-wrapper">
-                <input type="password" name="password" className="page-content-input" placeholder="Введите пароль"></input>
-                {/* <img src="" alt=""></img> */}
+                <input
+                    name="password"
+                    className="page-content-input"
+                    placeholder="Введите пароль"
+                    type={passwordShown ? "text" : "password"}
+                />
+                <i onClick={togglePasswordVisiblity}>{eye}</i>
             </div>
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue login-button-blue" type="submit">Войти</button>
