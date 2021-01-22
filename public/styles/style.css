@@ -222,16 +222,6 @@ a:hover, button:hover {
     margin-right: 1.25rem;
 }
 
-/* ----------------------- RESET PASSWORD ----------------------- */
-.reset_pass-button-blue {
-    width: 10.938rem;
-    margin-right: 2rem;
-}
-
-.reset_pass-instructions {
-    margin-bottom: 2.5rem;
-}
-
 /* ----------------------- REGISTRATION ----------------------- */
 .registration-content {
     width: 100%;
@@ -297,6 +287,29 @@ a:hover, button:hover {
 .password-warning {
     color: #D92020;
 }
+
+
+/* ----------------------- RESET PASSWORD ----------------------- */
+.reset_pass-button-blue {
+    width: 10.938rem;
+    margin-right: 2rem;
+}
+
+.reset_pass-instructions {
+    margin-bottom: 2.5rem;
+}
+
+
+/* ----------------------- RESTORE PASSWORD ----------------------- */
+.restore_password-content {
+    width: 100%;
+    max-width: 24rem;
+    height: 100%;
+    max-height: 26.25rem;
+    margin-right: 2rem;
+}
+
+
 
 /* ----------------------- PASSWORD REQUIREMENTS ----------------------- */
 

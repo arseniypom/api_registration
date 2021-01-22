@@ -63,13 +63,13 @@ function PasswordsSet(props) {
     // Проверка содержит ли пароль 3 типа символов
     function checkSymbolTypes(password) {
         const result = (hasNumber(password) && hasLowerCase(password) && hasUpperCase(password));
-        result && setPasswordSafety((prevValue) => (prevValue+=3));
+        result && setPasswordSafety((prevValue) => (prevValue+=2));
         return result;
     }
     // Проверка длины пароля
     function checkLength(password) {
         const result = password.length > 7;
-        result && setPasswordSafety((prevValue) => (prevValue+=2));
+        result && setPasswordSafety((prevValue) => (prevValue+=3));
         return result;
     }
     // Проверка не содержит ли пароль имя пользователя
