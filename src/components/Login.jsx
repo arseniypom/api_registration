@@ -42,7 +42,7 @@ function Login() {
     }
 
     return <div className="body">
-        <Image />
+        <Image style={"decorative_image"}/>
         <div className="page-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Войти в аккаунт</h1>
