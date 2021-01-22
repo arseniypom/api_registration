@@ -8,8 +8,11 @@ function Registration() {
     const [userInfo, setUserInfo] = useState({
         username: "",
         password: "",
-        repeatPassword: ""
+        repeatPassword: "",
+        termsOfUse: false,
+        organizationRegulations: false
     });
+
 
     // Результаты валидации, происходящей в компоненте PasswordsSet
     const [isSymbolTypes, setSymbolTypes] = useState(null);
@@ -29,13 +32,15 @@ function Registration() {
         }
     }
 
-    function handleUsernameInput(event) {
-        const {value} = event.target;
-        emailValidation(value);
+    function handleUserInfoInput(event) {
+        const {name, value} = event.target;
+        if (name === "username") {
+            emailValidation(value);
+        }
         setUserInfo((prevValue) => {
             return {
                 ...prevValue,
-                username: value
+                [name]: value
             }
         });
     }
@@ -65,7 +70,7 @@ function Registration() {
             <div className="registration-input-wrapper" >
                 <label className="input-label" htmlFor="username">Адрес электронной почты</label>
                 <input
-                    onChange={handleUsernameInput}
+                    onChange={handleUserInfoInput}
                     value={userInfo.username}
                     type="email"
                     name="username"
@@ -83,14 +88,26 @@ function Registration() {
             />
 
             <div className="conditions_accept-wrapper conditions_accept-wrapper-first">
-                <input className="conditions_accept-wrapper-custom_checkbox" type="checkbox" id="terms_of_use" name="terms_of_use"/>
+                <input
+                    className="conditions_accept-wrapper-custom_checkbox"
+                    type="checkbox"
+                    id="termsOfUse"
+                    name="termsOfUse"
+                    onChange={handleUserInfoInput}
+                />
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
-                <label className="conditions_accept-wrapper-label" htmlFor="terms_of_use">Принимаю <a className="" href="">пользовательское соглашение</a></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="termsOfUse">Принимаю <a className="" href="">пользовательское соглашение</a></label>
             </div>
             <div className="conditions_accept-wrapper conditions_accept-wrapper-second">
-                <input className="conditions_accept-wrapper-custom_checkbox" type="checkbox" id="organization_regulations" name="organization_regulations" />
+                <input
+                    className="conditions_accept-wrapper-custom_checkbox"
+                    type="checkbox"
+                    id="organizationRegulations"
+                    name="organizationRegulations"
+                    onChange={handleUserInfoInput} 
+                />
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
-                <label className="conditions_accept-wrapper-label" htmlFor="organization_regulations">Принимаю <a className="" href="">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations">Принимаю <a className="" href="">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></label>
             </div>
 
             <div className="page-content-actions">

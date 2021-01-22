@@ -107,7 +107,6 @@ function PasswordsSet(props) {
                     id="password"
                     className="page-content-input"
                     placeholder="Придумайте пароль"
-
                 />
                 <i className="input-icon" onClick={togglePasswordVisiblity}>{eye}</i>
             </div>
