@@ -6,6 +6,12 @@ function PasswordsSet(props) {
         repeatPassword: ""
     });
 
+    const eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
+    const [passwordShown, setPasswordShown] = useState(false);
+    function togglePasswordVisiblity() {
+      setPasswordShown(passwordShown ? false : true);
+    };
+
     const [isPassEqual, setPassEqual] = useState(true);
     const [passwordSafety, setPasswordSafety] = useState(0);
     
@@ -93,11 +99,30 @@ function PasswordsSet(props) {
     return <div>
             <div className="password-input-wrapper">
                 <label className="input-label" htmlFor="password">Пароль</label>
-                <input onChange={handleInput} value={passwords.password} type="password" name="password" id="password" className="page-content-input" placeholder="Придумайте пароль"></input>
+                <input
+                    onChange={handleInput}
+                    value={passwords.password}
+                    type={passwordShown ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    className="page-content-input"
+                    placeholder="Придумайте пароль"
+
+                />
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{eye}</i>
             </div>
             <div className="password-input-wrapper">
                 <label className="input-label" htmlFor="repeatPassword">Подтверждение пароля</label>
-                <input onChange={handleInputAndCheckEquality} value={passwords.repeatPassword} type="password" name="repeatPassword" id="repeatPassword" className="page-content-input" placeholder="Повторите пароль"></input>
+                <input
+                    onChange={handleInputAndCheckEquality}
+                    value={passwords.repeatPassword}
+                    type={passwordShown ? "text" : "password"}
+                    name="repeatPassword"
+                    id="repeatPassword"
+                    className="page-content-input"
+                    placeholder="Повторите пароль"
+                />
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{eye}</i>
             </div>
             {/* Предупреждение в случае несоответствия паролей */}
             {!isPassEqual && <p className="password-warning">Пароли не совпадают</p>}

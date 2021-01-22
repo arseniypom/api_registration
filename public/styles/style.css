@@ -129,6 +129,11 @@ a:hover, button:hover {
     border-color: #D92020;
 }
 
+.password-input-wrapper {
+    position: relative;
+    width: 24rem;
+}
+
 .input-label {
     font-size: 0.875rem;
     line-height: 1rem;
@@ -139,7 +144,7 @@ a:hover, button:hover {
 
 .input-icon {
     position: absolute;
-    top: 25.94px;
+    bottom: 20.4px;
     right: 18.01px;
 }
 

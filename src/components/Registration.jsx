@@ -11,15 +11,27 @@ function Registration() {
         repeatPassword: ""
     });
 
-    // Результаты валидации
+    // Результаты валидации, происходящей в компоненте PasswordsSet
     const [isSymbolTypes, setSymbolTypes] = useState(null);
     const [isLengthCorrect, setLengthCorrect] = useState(null);
     const [isPasswordContainUsername, setPasswordContainUsername] = useState(null);
     const [passwordSafety, setPasswordSafety] = useState(0);
     const [isSameSymbolsSequence, setSameSymbolsSequence] = useState(null);
 
+    // Валидация адреса электронной почты
+    const [inputStyle, setInputStyle] = useState("page-content-input");
+    function emailValidation(emailAddress) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(emailAddress)) {
+            setInputStyle("page-content-input page-content-input-success");
+        } else {
+            setInputStyle("page-content-input page-content-input-error");
+        }
+    }
+
     function handleUsernameInput(event) {
         const {value} = event.target;
+        emailValidation(value);
         setUserInfo((prevValue) => {
             return {
                 ...prevValue,
@@ -52,7 +64,16 @@ function Registration() {
             <h1 className="page-content-h1">Регистрация</h1>
             <div className="registration-input-wrapper" >
                 <label className="input-label" htmlFor="username">Адрес электронной почты</label>
-                <input onChange={handleUsernameInput} value={userInfo.username} type="email" name="username" id="username" className="page-content-input" placeholder="Введите адрес электронной почты" autoFocus></input>
+                <input
+                    onChange={handleUsernameInput}
+                    value={userInfo.username}
+                    type="email"
+                    name="username"
+                    id="username"
+                    className={inputStyle}
+                    placeholder="Введите адрес электронной почты"
+                    autoFocus
+                />
             </div>
 
             <PasswordsSet 

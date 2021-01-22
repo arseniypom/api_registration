@@ -11,6 +11,7 @@ function Login() {
     });
     const eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
 
+    // Валидация адреса электронной почты
     const [inputStyle, setInputStyle] = useState("page-content-input");
     function emailValidation(emailAddress) {
         const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
