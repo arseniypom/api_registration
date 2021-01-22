@@ -310,7 +310,6 @@ a:hover, button:hover {
 }
 
 
-
 /* ----------------------- PASSWORD REQUIREMENTS ----------------------- */
 
 .pass_requirements-content {
@@ -343,4 +342,20 @@ a:hover, button:hover {
 
 .pass_requirements-content-condition-p {
     max-width: 19rem;
+}
+
+
+/* ----------------------- CONFIRMATION ----------------------- */
+.confirmation-content {
+    width: 31.5rem;
+}
+
+.confirmation-content-p {
+    color: #242424;
+}
+
+.confirmation-content-username {
+    color: #242424;
+    font-size: 1.125rem;
+    font-family: "VTB65Web";
 }
