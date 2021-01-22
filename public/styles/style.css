@@ -137,6 +137,20 @@ a:hover, button:hover {
     margin-bottom: 0.5rem;
 }
 
+.input-icon {
+    position: absolute;
+    top: 25.94px;
+    right: 18.01px;
+}
+
+.input-icon-eye_img {
+    width: 19.99px;
+}
+
+.input-icon:hover {
+    cursor: pointer;
+}
+
 .page-content-muted {
     color: #7B7E86;
 }
@@ -193,6 +207,8 @@ a:hover, button:hover {
 
 /* ----------------------- LOGIN ----------------------- */
 .login-password-wrapper {
+    position: relative;
+    width: 24rem;
     margin-bottom: 2.5rem;
 }
 
