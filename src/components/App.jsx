@@ -6,7 +6,7 @@ import Registration from "./Registration";
 import ResetPassword from "./ResetPassword";
 import RestorePassword from "./RestorePassword";
 import Confirmation from "./Confirmation";
-
+import Congratulations from "./Congratulations";
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
                 <Route exact path="/password-reset" component={ResetPassword} />
                 <Route exact path="/password-restore" component={RestorePassword} />
                 <Route exact path="/confirmation" component={Confirmation} />
+                <Route exact path="/congratulations" component={Congratulations} />
             </Switch>
         </Router>
     </div>

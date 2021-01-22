@@ -203,9 +203,15 @@ a:hover, button:hover {
     margin-right: 5.938rem;
 }
 
+.congratulations-decorative_image {
+    width: 31.5rem;
+    height: 31.5rem;
+}
+
+
 
 @media (max-width: 1023px) {
-    .decorative_image {
+    .decorative_image, .congratulations-decorative_image {
         display: none;
     }
 }
@@ -358,4 +364,17 @@ a:hover, button:hover {
     color: #242424;
     font-size: 1.125rem;
     font-family: "VTB65Web";
+}
+
+
+/* ----------------------- CONFIRMATION ----------------------- */
+.congratulations-content {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 3rem 0 9rem;
+}
+
+.congratulations-content-p {
+    color: #242424;
+    margin-bottom: 2.5rem;
 }

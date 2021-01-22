@@ -1,8 +1,8 @@
 import React from "react";
 
-function Image() {
+function Image(props) {
     return <div>
-        <img src="images/onboarding.png" alt="" className="decorative_image"/>
+        <img src="images/onboarding.png" alt="" className={props.style}/>
     </div>
 }
 
