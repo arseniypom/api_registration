@@ -32,15 +32,13 @@ function Registration() {
         }
     }
 
-    function handleUserInfoInput(event) {
-        const {name, value} = event.target;
-        if (name === "username") {
-            emailValidation(value);
-        }
+    function handleUsernameInput(event) {
+        const {value} = event.target;
+        emailValidation(value);
         setUserInfo((prevValue) => {
             return {
                 ...prevValue,
-                [name]: value
+                username: value
             }
         });
     }
@@ -51,6 +49,16 @@ function Registration() {
                 ...prevValue,
                 password: data.password,
                 repeatPassword: data.repeatPassword
+            }
+        });
+    }
+
+    function handleCheckboxInput(event) {
+        const {name} = event.target;
+        setUserInfo((prevValue) => {
+            return {
+                ...prevValue,
+                [name]: !userInfo[name]
             }
         });
     }
@@ -70,7 +78,7 @@ function Registration() {
             <div className="registration-input-wrapper" >
                 <label className="input-label" htmlFor="username">Адрес электронной почты</label>
                 <input
-                    onChange={handleUserInfoInput}
+                    onChange={handleUsernameInput}
                     value={userInfo.username}
                     type="email"
                     name="username"
@@ -93,7 +101,7 @@ function Registration() {
                     type="checkbox"
                     id="termsOfUse"
                     name="termsOfUse"
-                    onChange={handleUserInfoInput}
+                    onChange={handleCheckboxInput}
                 />
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
                 <label className="conditions_accept-wrapper-label" htmlFor="termsOfUse">Принимаю <a className="" href="">пользовательское соглашение</a></label>
@@ -104,10 +112,9 @@ function Registration() {
                     type="checkbox"
                     id="organizationRegulations"
                     name="organizationRegulations"
-                    onChange={handleUserInfoInput} 
+                    onChange={handleCheckboxInput} 
                 />
-                {/* Необходимо добавить аттрибут href ссылке ниже */}
-                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations">Принимаю <a className="" href="">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations">Принимаю <a className="" href="documents/obrabotkа_pdn_banka_vtb_pao.pdf" download="obrabotkа_pdn_banka_vtb_pao">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></label>
             </div>
 
             <div className="page-content-actions">

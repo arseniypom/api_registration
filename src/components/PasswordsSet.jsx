@@ -6,10 +6,11 @@ function PasswordsSet(props) {
         repeatPassword: ""
     });
 
-    const eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
+    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
+    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.png" alt=""></img>;
     const [passwordShown, setPasswordShown] = useState(false);
     function togglePasswordVisiblity() {
-      setPasswordShown(passwordShown ? false : true);
+      setPasswordShown(!passwordShown);
     };
 
     const [isPassEqual, setPassEqual] = useState(true);
@@ -53,9 +54,11 @@ function PasswordsSet(props) {
     function hasNumber(password) {
         return /\d/.test(password);
     }
+    // Проверка наличия нижнего регистра в вводе
     function hasLowerCase(password) {
         return password.toUpperCase() !== password;
     }
+    // Проверка наличия верхнего регистра в вводе
     function hasUpperCase(password) {
         return password.toLowerCase() !== password;
     }
@@ -108,7 +111,7 @@ function PasswordsSet(props) {
                     className="page-content-input"
                     placeholder="Придумайте пароль"
                 />
-                <i className="input-icon" onClick={togglePasswordVisiblity}>{eye}</i>
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? opened_eye : closed_eye}</i>
             </div>
             <div className="password-input-wrapper">
                 <label className="input-label" htmlFor="repeatPassword">Подтверждение пароля</label>
@@ -121,7 +124,7 @@ function PasswordsSet(props) {
                     className="page-content-input"
                     placeholder="Повторите пароль"
                 />
-                <i className="input-icon" onClick={togglePasswordVisiblity}>{eye}</i>
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? opened_eye : closed_eye}</i>
             </div>
             {/* Предупреждение в случае несоответствия паролей */}
             {!isPassEqual && <p className="password-warning">Пароли не совпадают</p>}
