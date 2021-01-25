@@ -9,7 +9,6 @@ function Login() {
         username: "",
         password: ""
     });
-    const eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
 
     // Валидация адреса электронной почты
     const [inputStyle, setInputStyle] = useState("page-content-input");
@@ -23,9 +22,11 @@ function Login() {
     }
 
 
+    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
+    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.png" alt=""></img>;
     const [passwordShown, setPasswordShown] = useState(false);
     function togglePasswordVisiblity() {
-      setPasswordShown(passwordShown ? false : true);
+      setPasswordShown(!passwordShown);
     };
     
     function handleInput(event) {
@@ -64,7 +65,7 @@ function Login() {
                     value={inputInfo.password}
                     onChange={handleInput}
                 />
-                <i className="input-icon" onClick={togglePasswordVisiblity}>{eye}</i>
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? opened_eye : closed_eye}</i>
             </div>
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue login-button-blue" type="submit">Войти</button>
