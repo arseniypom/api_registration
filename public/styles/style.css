@@ -326,9 +326,8 @@ a:hover, button:hover {
 .pass_requirements-content {
     background-color: #F3F4F6;
     width: 100%;
-    height: 23.75rem;
+    height: auto;
     max-width: 24rem;
-    max-height: 23.75rem;
     margin-top: -2.5rem;
     padding: 1.25rem;
     border-radius: 4px;
@@ -339,7 +338,7 @@ a:hover, button:hover {
 }
 
 .pass_requirements-content-condition {
-    height: 3rem;
+    height: auto;
     margin-top: 1rem;
     display: flex;
     align-items: flex-start;
@@ -350,11 +349,11 @@ a:hover, button:hover {
     height: 100%;
     max-width: 1.125rem;
     max-height: 1.125rem;
-    margin: 0.1rem 0.5rem 0 0;
+    margin: 0.12rem 0.5rem 0 0;
 }
 
 .pass_requirements-content-condition-p {
-    max-width: 19rem;
+    max-width: 21rem;
 }
 
 
