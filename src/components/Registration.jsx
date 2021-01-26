@@ -104,7 +104,7 @@ function Registration() {
                     onChange={handleCheckboxInput}
                 />
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
-                <label className="conditions_accept-wrapper-label" htmlFor="termsOfUse">Принимаю <a className="" href="">пользовательское соглашение</a></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="termsOfUse"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href="">пользовательское соглашение</a></p></label>
             </div>
             <div className="conditions_accept-wrapper conditions_accept-wrapper-second">
                 <input
@@ -114,7 +114,7 @@ function Registration() {
                     name="organizationRegulations"
                     onChange={handleCheckboxInput} 
                 />
-                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations">Принимаю <a className="" href="documents/obrabotkа_pdn_banka_vtb_pao.pdf" download="obrabotkа_pdn_banka_vtb_pao">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href="documents/obrabotkа_pdn_banka_vtb_pao.pdf" download="obrabotkа_pdn_banka_vtb_pao">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></p></label>
             </div>
 
             <div className="page-content-actions">
