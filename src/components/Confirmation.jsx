@@ -9,7 +9,7 @@ function Confirmation() {
     const targetAction = "сброса пароля";
 
     return <div className="body">
-        <Image style={"decorative_image"}/>
+        <Image img="images/login_API-09.png" style="decorative_image"/>
         <div className="confirmation-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Подтверждение</h1>
