@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import SinglePasswordRequirement from "./SinglePasswordRequirement";
 
 function PasswordRequirements(props) {
-    // const [isPasswordSafe, setPasswordSafe] = useState(null);
+
     function checkPasswordSafety(passwordSafety) {
         if (passwordSafety === 0) {
             return null

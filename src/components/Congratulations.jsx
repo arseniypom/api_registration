@@ -14,7 +14,7 @@ function Congratulations() {
                 <a href="/"><button className="page-content-button page-content-button-blue login-button-blue" type="submit">Войти</button></a>
             </div>
         </div>
-        <Image img="images/login_API-10.png" style="congratulations-decorative_image"/>
+        <Image img="images/login_API-10.png" style={"congratulations-decorative_image"}/>
     </div>
 }
 
