@@ -6,8 +6,8 @@ function PasswordsSet(props) {
         repeatPassword: ""
     });
 
-    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
-    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.png" alt=""></img>;
+    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.svg" alt=""></img>;
+    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.svg" alt=""></img>;
     const [passwordShown, setPasswordShown] = useState(false);
     function togglePasswordVisiblity() {
       setPasswordShown(!passwordShown);
@@ -111,7 +111,7 @@ function PasswordsSet(props) {
                     className="page-content-input"
                     placeholder="Придумайте пароль"
                 />
-                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? opened_eye : closed_eye}</i>
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? closed_eye : opened_eye}</i>
             </div>
             <div className="password-input-wrapper">
                 <label className="input-label" htmlFor="repeatPassword">Подтверждение пароля</label>
@@ -124,7 +124,7 @@ function PasswordsSet(props) {
                     className="page-content-input"
                     placeholder="Повторите пароль"
                 />
-                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? opened_eye : closed_eye}</i>
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? closed_eye : opened_eye}</i>
             </div>
             {/* Предупреждение в случае несоответствия паролей */}
             {!isPassEqual && <p className="password-warning">Пароли не совпадают</p>}
