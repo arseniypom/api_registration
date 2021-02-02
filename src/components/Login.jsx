@@ -14,16 +14,14 @@ function Login() {
     const [inputStyle, setInputStyle] = useState("page-content-input");
     function emailValidation(emailAddress) {
         const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (re.test(emailAddress)) {
-            setInputStyle("page-content-input page-content-input-success");
-        } else {
+        if (!re.test(emailAddress)) {
             setInputStyle("page-content-input page-content-input-error");
-        }
+        } 
     }
 
 
-    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.png" alt=""></img>;
-    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.png" alt=""></img>;
+    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.svg" alt=""></img>;
+    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.svg" alt=""></img>;
     const [passwordShown, setPasswordShown] = useState(false);
     function togglePasswordVisiblity() {
       setPasswordShown(!passwordShown);
@@ -65,7 +63,7 @@ function Login() {
                     value={inputInfo.password}
                     onChange={handleInput}
                 />
-                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? opened_eye : closed_eye}</i>
+                <i className="input-icon" onClick={togglePasswordVisiblity}>{passwordShown ? closed_eye : opened_eye}</i>
             </div>
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue login-button-blue" type="submit">Войти</button>

@@ -123,13 +123,12 @@ a:hover, button:hover {
     margin-bottom: 1.25rem;
     padding: 1rem;
 }
-
-.page-content-input-success {
-    border-color: #1BA049;
+.page-content-input:focus {
+    border: 2px solid #0062FF;
 }
 
 .page-content-input-error {
-    border-color: #D92020;
+    border: 1px solid #D92020;
 }
 
 .password-input-wrapper {
@@ -147,16 +146,18 @@ a:hover, button:hover {
 
 .input-icon {
     position: absolute;
-    bottom: 20.4px;
+    bottom: 12px;
     right: 18.01px;
+}
+.input-icon:hover {
+    cursor: pointer;
 }
 
 .input-icon-eye_img {
-    width: 19.99px;
+    width: 25px;
 }
-
-.input-icon:hover {
-    cursor: pointer;
+.input-icon-eye_img:hover {
+    filter: invert(20%) sepia(90%) saturate(4167%) hue-rotate(215deg) brightness(107%) contrast(104%);
 }
 
 .page-content-muted {
@@ -184,11 +185,23 @@ a:hover, button:hover {
     background-color: #0062FF;
     color: #ffffff;
 }
+.page-content-button-blue:hover {
+    background-color: #0142D3;
+}
+.page-content-button-blue:active {
+    background-color: #022D9A;
+}
 
 .page-content-button-white {
     width: 13.563rem;
     color: #0062FF;
     background-color: #ffffff;
+}
+.page-content-button-white:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.page-content-button-white:active {
+    background-color: rgba(0,0,0,0.16);
 }
 
 .page-content-link {
@@ -250,7 +263,7 @@ a:hover, button:hover {
     width: 20px;
     height: 20px;
     border-radius: 4px;
-    border: 1px solid #0062FF;
+    border: 1px solid #7B7E86;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 23.5px 23.5px;
@@ -259,6 +272,7 @@ a:hover, button:hover {
 
 .conditions_accept-wrapper-custom_checkbox:checked+label::before {
     background-image: url("../images/Tick.png");
+    border: 1px solid #0062FF;
 }
 
 .conditions_accept-wrapper-first {

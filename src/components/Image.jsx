@@ -2,7 +2,7 @@ import React from "react";
 
 function Image(props) {
     return <div>
-        <img src={props.img} alt="decorative image" className={props.style}/>
+        <img src={props.img} alt="decorative" className={props.style}/>
     </div>
 }
 
