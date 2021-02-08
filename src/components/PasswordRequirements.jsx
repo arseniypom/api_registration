@@ -1,4 +1,5 @@
 import React from "react";
+
 import SinglePasswordRequirement from "./SinglePasswordRequirement";
 
 function PasswordRequirements(props) {

@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import resetPassImg from "../assets/images/login_API-08.png";
+
 import Image from "./Image";
 import EmailInput from "./EmailInput";
 
@@ -13,7 +15,7 @@ function ResetPassword() {
     }
 
     return <div className="body">
-        <Image img="images/login_API-08.png" style={"decorative_image"}/>
+        <Image img={resetPassImg} style={"decorative_image"}/>
         <div className="page-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Сброс пароля</h1>

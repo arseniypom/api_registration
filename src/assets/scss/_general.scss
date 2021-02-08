@@ -1,0 +1,40 @@
+/* ----------------------- GENERAL ----------------------- */
+h1 {
+    font-size: 2.125rem;
+    line-height: 2.25rem;
+    font-family: "VTB Group UI";
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.688rem;
+    line-height: 1.75rem;
+    font-family: "VTB Group UI";
+    font-weight: 500;
+}
+
+
+p, a, input, label {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "VTB Group UI";
+    font-weight: 400;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+}
+
+
+a:hover, button:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main_div {
+    height: 90%;
+}

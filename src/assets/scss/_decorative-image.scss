@@ -1,0 +1,20 @@
+/* ----------------------- DECORATIVE IMAGE ----------------------- */
+.decorative_image {
+    width: 31.5rem;
+    height: 31.5rem;
+    margin-right: 5.938rem;
+}
+
+.congratulations-decorative_image {
+    width: 31.5rem;
+    height: 31.5rem;
+}
+
+
+
+@media (max-width: 1023px) {
+    .decorative_image, .congratulations-decorative_image {
+        display: none;
+    }
+}
+
