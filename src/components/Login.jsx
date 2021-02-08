@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import Image from "./Image";
 
+import Image from "./Image";
+import EmailInput from "./EmailInput";
 
 
 function Login() {
@@ -9,16 +10,6 @@ function Login() {
         username: "",
         password: ""
     });
-
-    // Валидация адреса электронной почты
-    const [inputStyle, setInputStyle] = useState("page-content-input");
-    function emailValidation(emailAddress) {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(emailAddress)) {
-            setInputStyle("page-content-input page-content-input-error");
-        } 
-    }
-
 
     const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.svg" alt=""></img>;
     const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.svg" alt=""></img>;
@@ -29,9 +20,6 @@ function Login() {
     
     function handleInput(event) {
         const {name, value} = event.target;
-        if (name === "username") {
-            emailValidation(value);
-        }
         setInputInfo((prevValue) => {
             return {
                 ...prevValue,
@@ -45,14 +33,9 @@ function Login() {
         <div className="page-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Войти в аккаунт</h1>
-            <input
-                type="email"
-                name="username"
-                className={inputStyle}
-                placeholder="Введите логин"
-                autoFocus
-                value={inputInfo.username}
-                onChange={handleInput}
+            <EmailInput 
+                emailHandle={handleInput}
+                currentValue={inputInfo.username}
             />
             <div className="login-password-wrapper">
                 <input
