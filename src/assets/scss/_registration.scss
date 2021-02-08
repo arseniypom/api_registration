@@ -54,8 +54,32 @@
     opacity: 0;
 }
 
-
 .registration-button-blue {
     width: 11rem;
     margin-right: 2rem;
+}
+
+@media (max-width: 1023px) {
+    .registration-content {
+        width: fit-content;
+        height: auto;
+        max-height: none;
+        margin-right: 0;
+    }
+
+    .registration-button-blue {
+        margin: 1rem 0 0;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .registration-content {
+        width: 100%;
+        margin-top: 1rem;
+
+        & * {
+            width: 100% !important;
+        }
+    }
 }

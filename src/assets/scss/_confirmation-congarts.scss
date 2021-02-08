@@ -15,6 +15,28 @@
 }
 
 
+@media (max-width: 1023px) {
+    .confirmation-content {
+        width: fit-content;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .confirmation-content {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .confirmation-content-username {
+        font-size: 1rem;
+    }
+}
+
+
 /* ----------------------- CONGRATULATIONS ----------------------- */
 .congratulations-content {
     width: 100%;
@@ -25,4 +47,20 @@
 .congratulations-content-p {
     color: #242424;
     margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1023px) {
+    .congratulations-content {
+        width: fit-content;
+        height: auto;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .congratulations-content {
+        width: 100%;
+        margin-top: 1rem;
+    }
 }
