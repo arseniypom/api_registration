@@ -7,7 +7,7 @@ import Image from "./Image";
 
 function Congratulations() {
 
-    return <div className="body">
+    return <div className="body congratulations">
         <div className="congratulations-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Поздравляем</h1>

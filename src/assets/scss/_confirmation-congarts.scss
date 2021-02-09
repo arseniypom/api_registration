@@ -50,6 +50,11 @@
 }
 
 @media (max-width: 1023px) {
+    .congratulations {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     .congratulations-content {
         width: fit-content;
         height: auto;
@@ -62,5 +67,9 @@
     .congratulations-content {
         width: 100%;
         margin-top: 1rem;
+
+        & * {
+            width: 100%;
+        }
     }
 }
