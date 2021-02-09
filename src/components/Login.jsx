@@ -3,6 +3,8 @@ import React, {useState} from "react";
 import loginImg from "../assets/images/login_API-07.png";
 import Image from "./Image";
 import EmailInput from "./EmailInput";
+import closedEyeImg from "../assets/images/closed_eye.svg";
+import openedEyeImg from "../assets/images/opened_eye.svg";
 
 
 function Login() {
@@ -12,8 +14,8 @@ function Login() {
         password: ""
     });
 
-    const closed_eye = <img className="input-icon-eye_img" src="images/closed_eye.svg" alt=""></img>;
-    const opened_eye = <img className="input-icon-eye_img" src="images/opened_eye.svg" alt=""></img>;
+    const closed_eye = <img className="input-icon-eye_img" src={closedEyeImg} alt="eye"></img>;
+    const opened_eye = <img className="input-icon-eye_img" src={openedEyeImg} alt="eye"></img>;
     const [passwordShown, setPasswordShown] = useState(false);
     function togglePasswordVisiblity() {
       setPasswordShown(!passwordShown);

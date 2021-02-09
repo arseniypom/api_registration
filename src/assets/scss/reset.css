@@ -37,3 +37,6 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
+button:focus {
+	outline: none;
+}
