@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PasswordsSet from "./PasswordsSet";
 import PasswordRequirements from "./PasswordRequirements";
 import EmailInput from "./EmailInput";
+import pdnDocument from "../assets/documents/obrabotkа_pdn_banka_vtb_pao.pdf"
 
 
 function Registration() {
@@ -96,9 +97,9 @@ function Registration() {
                     type="checkbox"
                     id="organizationRegulations"
                     name="organizationRegulations"
-                    onChange={handleCheckboxInput} 
+                    onChange={handleCheckboxInput}
                 />
-                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href="documents/obrabotkа_pdn_banka_vtb_pao.pdf" download="obrabotkа_pdn_banka_vtb_pao">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></p></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href={pdnDocument} download="obrabotkа_pdn_banka_vtb_pao">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></p></label>
             </div>
 
             <div className="page-content-actions">
