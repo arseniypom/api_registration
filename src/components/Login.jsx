@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+import loginImg from "../assets/images/login_API-07.png";
 import Image from "./Image";
 import EmailInput from "./EmailInput";
 
@@ -29,7 +30,7 @@ function Login() {
     }
 
     return <div className="body">
-        <Image img="images/login_API-07.png" style={"decorative_image"}/>
+        <Image img={loginImg} style={"decorative_image"}/>
         <div className="page-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Войти в аккаунт</h1>

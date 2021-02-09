@@ -1,0 +1,75 @@
+/* ----------------------- CONFIRMATION ----------------------- */
+.confirmation-content {
+    width: 31.5rem;
+}
+
+.confirmation-content-p {
+    color: #242424;
+}
+
+.confirmation-content-username {
+    color: #242424;
+    font-size: 1.125rem;
+    font-family: "VTB Group UI";
+    font-weight: 600;
+}
+
+
+@media (max-width: 1023px) {
+    .confirmation-content {
+        width: fit-content;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .confirmation-content {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .confirmation-content-username {
+        font-size: 1rem;
+    }
+}
+
+
+/* ----------------------- CONGRATULATIONS ----------------------- */
+.congratulations-content {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 3rem 0 9rem;
+}
+
+.congratulations-content-p {
+    color: #242424;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1023px) {
+    .congratulations {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .congratulations-content {
+        width: fit-content;
+        height: auto;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .congratulations-content {
+        width: 100%;
+        margin-top: 1rem;
+
+        & * {
+            width: 100%;
+        }
+    }
+}

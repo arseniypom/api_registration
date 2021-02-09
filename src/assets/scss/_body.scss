@@ -1,0 +1,177 @@
+/* ----------------------- BODY ----------------------- */
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 2.5rem 5.938rem 0 3.563rem;
+}
+
+.page-content {
+    width: 31.5rem;
+    height: 31.5rem;
+    margin-top: 3.625rem;
+}
+
+.page-content-p {
+    color: #242424;
+    width: 100%;
+    max-width: 23rem;
+}
+
+.page-content-h1 {
+    margin: 0.5rem 0 2.5rem;    
+}
+
+.page-content-description {
+    color: #22242A;
+    margin-bottom: 1.25rem;
+}
+
+.page-content-input {
+    display: block;
+    width: 24rem;
+    height: 3.5rem;
+    border-radius: 4px;
+    border: 1px solid #B1B5BB;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+}
+.page-content-input:focus {
+    border: 2px solid #0062FF;
+}
+
+.page-content-input-error {
+    border: 1px solid #D92020;
+}
+
+.password-input-wrapper {
+    position: relative;
+    width: 24rem;
+}
+
+.input-label {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: "VTB Group UI";
+    font-weight: 400;
+    color: #7B7E86;
+    margin-bottom: 0.5rem;
+}
+
+.input-icon {
+    position: absolute;
+    bottom: 12px;
+    right: 18.01px;
+}
+.input-icon:hover {
+    cursor: pointer;
+}
+
+.input-icon-eye_img {
+    width: 25px;
+}
+.input-icon-eye_img:hover {
+    filter: invert(20%) sepia(90%) saturate(4167%) hue-rotate(215deg) brightness(107%) contrast(104%);
+}
+
+.page-content-muted {
+    color: #7B7E86;
+}
+
+.page-content-actions {
+    display: flex;
+    align-items: center;
+    width: 24rem;
+    margin-bottom: 1.75rem;
+}
+
+.page-content-button {
+    display: inline-block;
+    font-family: "VTB Group UI";
+    font-weight: 500;
+    line-height: 1.5rem;
+    height: 3.5rem;
+    border-radius: 4px;
+    border: 1px solid #0062FF;
+}
+
+.page-content-button-blue {
+    background-color: #0062FF;
+    color: #ffffff;
+}
+.page-content-button-blue:hover {
+    background-color: #0142D3;
+}
+.page-content-button-blue:active {
+    background-color: #022D9A;
+}
+
+.page-content-button-white {
+    width: 13.563rem;
+    color: #0062FF;
+    background-color: #ffffff;
+}
+.page-content-button-white:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.page-content-button-white:active {
+    background-color: rgba(0,0,0,0.16);
+}
+
+.page-content-link {
+    display: block;
+    max-width: fit-content;
+}
+
+@media (max-width: 1023px) {
+    .body {
+        flex-direction: column;
+        justify-content: unset;
+
+        padding: 1.5rem 1rem 1.75rem;
+    }
+
+    .page-content {
+        width: fit-content;
+        height: auto;
+
+        &-actions {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        &-link {
+            margin: 1.75rem auto 0;
+        }
+    }
+}
+
+
+@media (max-width: 425px) {
+    .page-content {
+        width: 100%;
+        margin-top: 1rem;
+
+        & * {
+            width: 100% !important;
+        }
+
+        &-actions {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .page-content-actions-login {
+        text-align: center;
+        margin-top: 2rem;
+
+        .page-content-link {
+            margin-top: .5rem;
+        }
+    }
+}

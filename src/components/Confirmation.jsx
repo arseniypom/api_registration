@@ -1,4 +1,7 @@
 import React from "react";
+
+import confirmationImg from "../assets/images/login_API-09.png";
+
 import Image from "./Image";
 
 
@@ -9,7 +12,7 @@ function Confirmation() {
     const targetAction = "сброса пароля";
 
     return <div className="body">
-        <Image img="images/login_API-09.png" style={"decorative_image"}/>
+        <Image img={confirmationImg} style={"decorative_image"}/>
         <div className="confirmation-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Подтверждение</h1>

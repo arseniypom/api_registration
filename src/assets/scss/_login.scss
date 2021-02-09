@@ -1,0 +1,17 @@
+/* ----------------------- LOGIN ----------------------- */
+.login-password-wrapper {
+    position: relative;
+    width: 24rem;
+    margin-bottom: 2.5rem;
+}
+
+.login-button-blue {
+    width: 9.188rem;
+    margin-right: 1.25rem;
+}
+
+@media (max-width: 1023px) {
+    .login-button-blue {
+        margin: 0 0 1.25rem;
+    }
+}
