@@ -1,3 +1,16 @@
+# О проекте
+Данное приложение представляет из себя MPA на React JS, переход по страницам осуществляется через BrowserRouter.
+
+Структура:
+* public (внутри лежит главный index.html)
+* src
+    * assets (все статичные файлы и стили SCSS)
+    * components (все реакт-компоненты приложения)
+    * App.jsx (главный компонент, в котором прописан роутинг)
+    * index.js (рэндерит компонент App)
+* firebase.json (конфиг для деплоя на firebase)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
