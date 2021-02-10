@@ -9,6 +9,7 @@
     * App.jsx (главный компонент, в котором прописан роутинг)
     * index.js (рэндерит компонент App)
 * firebase.json (конфиг для деплоя на firebase)
+* build (продакшн-версия, используемая для публикации)
 
 
 # Getting Started with Create React App
