@@ -103,7 +103,7 @@ function Registration() {
             </div>
 
             <div className="page-content-actions">
-                <button className="page-content-button page-content-button-blue registration-button-blue" type="submit">Регистрация</button>
+                <button disabled={userInfo.termsOfUse ? !userInfo.organizationRegulations : true} className="page-content-button page-content-button-blue registration-button-blue" type="submit">Регистрация</button>
                 <div className="page-content-actions-login">
                     <p>Уже есть аккаунт?</p>
                     <a className="page-content-link" href="/">Войти</a>

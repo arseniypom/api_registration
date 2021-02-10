@@ -108,6 +108,13 @@
     background-color: #022D9A;
     border-color: #022D9A;
 }
+.page-content-button-blue:disabled,
+.page-content-button-blue[disabled]{
+  border-color:#E5E7EB;
+  background-color: #E5E7EB;
+  color: #B1B5BB;
+  cursor: not-allowed;
+}
 
 .page-content-button-white {
     width: 13.563rem;
