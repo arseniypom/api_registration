@@ -6,7 +6,7 @@ function Header() {
     return <header className="header">
         <a href="/"><div className="top-menu">
             <img src={Logo} alt="VTB" className="top-menu-logo"/>
-            <h2 className="top-menu-text">Паспорт</h2>
+            <h2 className="top-menu-text">API</h2>
         </div></a>
     </header>
 }
