@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PasswordsSet from "./PasswordsSet";
 import PasswordRequirements from "./PasswordRequirements";
 import EmailInput from "./EmailInput";
+import TextInput from "./TextInput";
 import pdnDocument from "../assets/documents/obrabotkа_pdn_banka_vtb_pao.pdf";
 import agreementDocument from "../assets/documents/Оферта.pdf";
 
@@ -10,6 +11,8 @@ import agreementDocument from "../assets/documents/Оферта.pdf";
 function Registration() {
     // Объект с пользовательскими данными
     const [userInfo, setUserInfo] = useState({
+        name: "",
+        surname: "",
         username: "",
         password: "",
         repeatPassword: "",
@@ -25,12 +28,12 @@ function Registration() {
     const [passwordSafety, setPasswordSafety] = useState(0);
     const [isSameSymbolsSequence, setSameSymbolsSequence] = useState(null);
 
-    function handleUsernameInput(event) {
-        const {value} = event.target;
+    function handleUserInput(event) {
+        const {value, name} = event.target;
         setUserInfo((prevValue) => {
             return {
                 ...prevValue,
-                username: value
+                [name]: value
             }
         });
     }
@@ -63,14 +66,33 @@ function Registration() {
         setSameSymbolsSequence(sameSymbolsSequenceResult);
     }
 
-    return <div className="body">
+    return <main className="">
         <div className="registration-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Регистрация</h1>
             <div className="registration-input-wrapper" >
+                <label className="input-label" htmlFor="name">Имя</label>
+                <TextInput
+                    name="name"
+                    placeholder="Введите имя"
+                    currentValue={userInfo.name}
+                    handleInput={handleUserInput}
+                    autofocus
+                />
+            </div>
+            <div className="registration-input-wrapper" >
+                <label className="input-label" htmlFor="surname">Фамилия</label>
+                <TextInput
+                    name="surname"
+                    placeholder="Введите фамилию"
+                    currentValue={userInfo.surname}
+                    handleInput={handleUserInput}
+                />
+            </div>
+            <div className="registration-input-wrapper" >
                 <label className="input-label" htmlFor="username">Адрес электронной почты</label>
                 <EmailInput 
-                    emailHandle={handleUsernameInput}
+                    emailHandle={handleUserInput}
                     currentValue={userInfo.username}
                 />
             </div>
@@ -118,7 +140,7 @@ function Registration() {
             passwordSafetyCheck={passwordSafety}
             sameSymbolsCheck={isSameSymbolsSequence}  
         />
-    </div>
+    </main>
 }
 
 export default Registration;

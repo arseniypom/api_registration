@@ -25,8 +25,7 @@ function EmailInput(props) {
             type="email"
             name="username"
             className={ClassNames("page-content-input", {"page-content-input-error" : !isEmailCorrecrt})}
-            placeholder="Введите логин"
-            autoFocus
+            placeholder="Введите почту"
             value={props.currentValue}
             onChange={handleInput}
         />

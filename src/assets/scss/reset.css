@@ -19,9 +19,15 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-html, body {
+/* * { 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} */
+
+/* html, body {
 	height: 100%;
-}
+} */
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

@@ -14,7 +14,7 @@ function ResetPassword() {
         setEmail(value);
     }
 
-    return <div className="body">
+    return <main className="">
         <Image img={resetPassImg} style={"decorative_image"}/>
         <div className="page-content">
             <p className="page-content-p">API Developer Portal</p>
@@ -30,7 +30,7 @@ function ResetPassword() {
                 <a className="page-content-link" href="/">Вернуться к форме входа в систему</a>
             </div>
         </div>
-    </div>
+    </main>
 }
 
 export default ResetPassword;

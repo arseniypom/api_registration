@@ -31,7 +31,7 @@ function Login() {
         })
     }
 
-    return <div className="body">
+    return <main className="">
         <Image img={loginImg} style={"decorative_image"}/>
         <div className="page-content">
             <p className="page-content-p">API Developer Portal</p>
@@ -57,7 +57,7 @@ function Login() {
             </div>
             <a className="page-content-link" href="/registration">Создать аккаунт</a>
         </div>
-    </div>
+    </main>
 }
 
 export default Login;

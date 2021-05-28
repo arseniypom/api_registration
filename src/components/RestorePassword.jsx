@@ -35,7 +35,7 @@ function RestorePassword() {
         setSameSymbolsSequence(sameSymbolsSequenceResult);
     }
 
-    return <div className="body">
+    return <main className="">
         <div className="restore_password-content">
             <p className="page-content-p">API Developer Portal</p>
             <h1 className="page-content-h1">Восстановление пароля</h1>
@@ -57,7 +57,7 @@ function RestorePassword() {
             passwordSafetyCheck={passwordSafety}
             sameSymbolsCheck={isSameSymbolsSequence}  
         />
-    </div>
+    </main>
 }
 
 export default RestorePassword;

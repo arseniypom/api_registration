@@ -1,6 +1,6 @@
 /* ----------------------- BODY ----------------------- */
-
-.body {
+body { min-height: 100vh; }
+main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +84,7 @@
     display: flex;
     align-items: center;
     width: 24rem;
-    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
 }
 
 .page-content-button {
@@ -100,6 +100,7 @@
 .page-content-button-blue {
     background-color: #0062FF;
     color: #ffffff;
+    padding: 1rem 1.5rem;
 }
 .page-content-button-blue:hover {
     background-color: #0142D3;
@@ -134,7 +135,7 @@
 }
 
 @media (max-width: 1023px) {
-    .body {
+    main {
         flex-direction: column;
         justify-content: unset;
 
