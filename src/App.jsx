@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
 
-import {Header, Login, Registration, ResetPassword, RestorePassword, Confirmation, Congratulations} from "./components"
+import {Header, Login, Registration, ResetPassword, RestorePassword, EmailConfirmation, ResetPasswordConfirmation,  Congratulations} from "./components"
 
 
 function App() {
@@ -12,7 +12,8 @@ function App() {
             <Route exact path="/registration" component={Registration} />
             <Route exact path="/password-reset" component={ResetPassword} />
             <Route exact path="/password-restore" component={RestorePassword} />
-            <Route exact path="/confirmation" component={Confirmation} />
+            <Route exact path="/email-confirmation" component={EmailConfirmation} />
+            <Route exact path="/password-reset-confirmation" component={ResetPasswordConfirmation} />
             <Route exact path="/congratulations" component={Congratulations} />
         </Switch>
     </div>

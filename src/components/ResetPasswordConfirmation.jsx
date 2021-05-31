@@ -10,7 +10,6 @@ import Image from "./Image";
 function Confirmation() {
     // Объект с пользовательскими данными
     const username = "Konstantin.Sorokin.1981@yandex.ru";
-    const targetAction = "сброса пароля";
     const [confirmationCode, setConfirmationCode] = useState("");
 
     function handleCodeInput(event) {
@@ -23,10 +22,10 @@ function Confirmation() {
         <Image img={confirmationImg} style={"decorative_image"}/>
         <div className="confirmation-content">
             <p className="page-content-p">API Developer Portal</p>
-            <h1 className="page-content-h1">Подтверждение</h1>
+            <h1 className="page-content-h1">Подтверждение сброса пароля</h1>
             <p className="confirmation-content-p">Мы отправили Вам код подтверждения на почту</p>
             <p className="confirmation-content-username">{username},</p>
-            <p className="confirmation-content-p">введите его в поле ниже для {targetAction}</p>
+            <p className="confirmation-content-p">введите его в поле ниже для сброса пароля</p>
             <div className="confirmation-content-input-wrapper" >
                 <label className="input-label" htmlFor="code">Код, отправленный на email</label>
                 <TextInput
