@@ -21,7 +21,7 @@ function Confirmation() {
         
         <Image img={confirmationImg} style={"decorative_image"}/>
         <div className="confirmation-content">
-            <p className="page-content-p">API Developer Portal</p>
+            <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Подтверждение сброса пароля</h1>
             <p className="confirmation-content-p">Мы отправили Вам код подтверждения на почту</p>
             <p className="confirmation-content-username">{username},</p>

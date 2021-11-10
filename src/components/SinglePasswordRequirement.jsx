@@ -1,8 +1,8 @@
 import React from "react";
 
-import correctImg from "../assets/images/Correct.png";
-import errorImg from "../assets/images/Error.png";
-import arrowImg from "../assets/images/Arrow.png";
+import correctImg from "../assets/images/Correct.svg";
+import errorImg from "../assets/images/Error.svg";
+import arrowImg from "../assets/images/Arrow.svg";
 
 function SinglePasswordRequirement(props) {
     let imgSource;

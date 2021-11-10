@@ -18,17 +18,31 @@ function PasswordsSet(props) {
     };
 
     const [isPassEqual, setPassEqual] = useState(true);
-    const [passwordSafety, setPasswordSafety] = useState(0);
+    // const [passwordSafety, setPasswordSafety] = useState(0);
+    const [usernameInPassword, setUsernameInPassword] = useState(0);
+    const [diffSymbolTypes, setDiffSymbolTypes] = useState(0);
+    const [enoughLength, setEnoughLength] = useState(0);
+    const [sameSymbolsSequence, setSameSymbolsSequence] = useState(0);
     
 
     // Обработка ввода (сохранение в переменную passwords) и проверка соответствия всем требованиям сложности
     function handleInput(event) {
         const {name, value} = event.target;
-        setPasswordSafety(0);
-        if (name === "password" && value.length > 0) {
-            props.validation(checkSymbolTypes(value), checkLength(value), checkUsernameInPassword(value), passwordSafety, checkSameSymbolsSequence(value.split("")));
-        } else if (name === "password" && value.length === 0) {
-            props.validation(null, null, null, 0, null);
+        setPassEqual(value === passwords.repeatPassword)
+        if (value.length > 0) {
+            checkSymbolTypes(value)
+            checkLength(value)
+            checkUsernameInPassword(value)
+            checkSameSymbolsSequence(value.split(""))
+
+            // props.setPasswordSafety(usernameInPassword + diffSymbolTypes + enoughLength + sameSymbolsSequence);
+        } else if (value.length === 0) {
+            // props.validation(null, null, null, 0, null);
+            props.setSymbolTypes(false)
+            props.setLengthCorrect(false)
+            props.setPasswordContainUsername(false)
+            // props.setPasswordSafety(0)
+            props.setSameSymbolsSequence(false)
         }
         setPasswords((prevValue) => {
             return {
@@ -41,11 +55,7 @@ function PasswordsSet(props) {
     // Обработка ввода (сохранение в переменную passwords) и проверка на совпадение паролей
     function handleInputAndCheckEquality(event) {
         const {name, value} = event.target;
-        if (name === "password") {
-            setPassEqual(value === passwords.repeatPassword)
-        } else if (name === "repeatPassword") {
-            setPassEqual(passwords.password === value)
-        }
+        setPassEqual(passwords.password === value)
         setPasswords((prevValue) => {
             return {
                 ...prevValue,
@@ -70,19 +80,28 @@ function PasswordsSet(props) {
     // Проверка содержит ли пароль 3 типа символов
     function checkSymbolTypes(password) {
         const result = (hasNumber(password) && hasLowerCase(password) && hasUpperCase(password));
-        result && setPasswordSafety((prevValue) => (prevValue+=2));
+        props.setSymbolTypes(result)
+        result ? 
+            setDiffSymbolTypes(2)
+            : setDiffSymbolTypes(0)
         return result;
     }
     // Проверка длины пароля
     function checkLength(password) {
         const result = password.length > 7;
-        result && setPasswordSafety((prevValue) => (prevValue+=3));
+        props.setLengthCorrect(result)
+        result ? 
+            setEnoughLength(3)
+            : setEnoughLength(0)
         return result;
     }
     // Проверка не содержит ли пароль имя пользователя
     function checkUsernameInPassword(password) {
         const result = (password.indexOf(props.username) === -1);
-        result && setPasswordSafety((prevValue) => (prevValue+=1));
+        props.setPasswordContainUsername(result)
+        result ? 
+            setUsernameInPassword(1)
+            : setUsernameInPassword(0)
         return result;
     }
 
@@ -99,7 +118,10 @@ function PasswordsSet(props) {
            return val.length > acc.length ? val : acc;
         });
         const result = res.length <= 3;
-        result && setPasswordSafety((prevValue) => (prevValue+=1));
+        props.setSameSymbolsSequence(result)
+        result ? 
+            setSameSymbolsSequence(1)
+            : setSameSymbolsSequence(0)
         return result;
     }
 

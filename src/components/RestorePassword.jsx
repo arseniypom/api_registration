@@ -37,7 +37,7 @@ function RestorePassword() {
 
     return <main className="">
         <div className="restore_password-content">
-            <p className="page-content-p">API Developer Portal</p>
+            <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Восстановление пароля</h1>
 
             <PasswordsSet 

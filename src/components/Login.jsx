@@ -34,7 +34,7 @@ function Login() {
     return <main className="">
         <Image img={loginImg} style={"decorative_image"}/>
         <div className="page-content">
-            <p className="page-content-p">API Developer Portal</p>
+            <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Войти в аккаунт</h1>
             <EmailInput 
                 emailHandle={handleInput}
@@ -53,7 +53,7 @@ function Login() {
             </div>
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue login-button-blue" type="submit">Войти</button>
-                <a href="/password-reset"><button className="page-content-button page-content-button-white">Восстановить пароль</button></a>
+                <a href="/password-reset"><button className="page-content-button page-content-button-transparent">Восстановить пароль</button></a>
             </div>
             <a className="page-content-link" href="/registration">Создать аккаунт</a>
         </div>

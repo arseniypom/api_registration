@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import PasswordsSet from "./PasswordsSet";
 import PasswordRequirements from "./PasswordRequirements";
@@ -14,18 +14,29 @@ function Registration() {
         name: "",
         surname: "",
         username: "",
+        organization: "",
         password: "",
         repeatPassword: "",
         termsOfUse: false,
         organizationRegulations: false
     });
 
+    const [isButtonEnabled, setButtonEnabled] = useState(false)
+
+    useEffect(() => {
+        for (let item in userInfo) {
+            if (!Boolean(userInfo[item])) {
+                setButtonEnabled(false)
+                return
+            }
+        }
+        setButtonEnabled(true)
+    })
 
     // Результаты валидации, происходящей в компоненте PasswordsSet
     const [isSymbolTypes, setSymbolTypes] = useState(null);
     const [isLengthCorrect, setLengthCorrect] = useState(null);
     const [isPasswordContainUsername, setPasswordContainUsername] = useState(null);
-    const [passwordSafety, setPasswordSafety] = useState(0);
     const [isSameSymbolsSequence, setSameSymbolsSequence] = useState(null);
 
     function handleUserInput(event) {
@@ -58,18 +69,18 @@ function Registration() {
         });
     }
 
-    function passwordValidation(symbolTypesResult, lengthCorrectResult, passwordContainUsernameResult, passwordSafetyResult, sameSymbolsSequenceResult) {
-        setSymbolTypes(symbolTypesResult);
-        setLengthCorrect(lengthCorrectResult);
-        setPasswordContainUsername(passwordContainUsernameResult);
-        setPasswordSafety(passwordSafetyResult);
-        setSameSymbolsSequence(sameSymbolsSequenceResult);
-    }
-
     return <main className="">
         <div className="registration-content">
-            <p className="page-content-p">API Developer Portal</p>
+            <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Регистрация</h1>
+            <div className="registration-input-wrapper" >
+                <label className="input-label" htmlFor="username">Адрес электронной почты (логин)</label>
+                <EmailInput 
+                    emailHandle={handleUserInput}
+                    currentValue={userInfo.username}
+                    autofocus
+                />
+            </div>
             <div className="registration-input-wrapper" >
                 <label className="input-label" htmlFor="name">Имя</label>
                 <TextInput
@@ -77,7 +88,6 @@ function Registration() {
                     placeholder="Введите имя"
                     currentValue={userInfo.name}
                     handleInput={handleUserInput}
-                    autofocus
                 />
             </div>
             <div className="registration-input-wrapper" >
@@ -90,17 +100,22 @@ function Registration() {
                 />
             </div>
             <div className="registration-input-wrapper" >
-                <label className="input-label" htmlFor="username">Адрес электронной почты</label>
-                <EmailInput 
-                    emailHandle={handleUserInput}
-                    currentValue={userInfo.username}
+                <label className="input-label" htmlFor="organization">Название организации</label>
+                <TextInput
+                    name="organization"
+                    placeholder="Введите название организации"
+                    currentValue={userInfo.organization}
+                    handleInput={handleUserInput}
                 />
             </div>
 
             <PasswordsSet 
                 username={userInfo.username}
                 savePassword={handlePasswordInput}
-                validation={passwordValidation}
+                setSymbolTypes={setSymbolTypes}
+                setLengthCorrect={setLengthCorrect}
+                setPasswordContainUsername={setPasswordContainUsername}
+                setSameSymbolsSequence={setSameSymbolsSequence} 
             />
 
             <div className="conditions_accept-wrapper conditions_accept-wrapper-first">
@@ -126,7 +141,7 @@ function Registration() {
             </div>
 
             <div className="page-content-actions">
-                <button disabled={userInfo.termsOfUse ? !userInfo.organizationRegulations : true} className="page-content-button page-content-button-blue registration-button-blue" type="submit">Регистрация</button>
+                <button disabled={!isButtonEnabled} className="page-content-button page-content-button-blue registration-button-blue" type="submit">Регистрация</button>
                 <div className="page-content-actions-login">
                     <p>Уже есть аккаунт?</p>
                     <a className="page-content-link" href="/">Войти</a>
@@ -137,7 +152,6 @@ function Registration() {
             symbolsCheck={isSymbolTypes}
             lengthCheck={isLengthCorrect}
             usernameInPasswordCheck={isPasswordContainUsername}
-            passwordSafetyCheck={passwordSafety}
             sameSymbolsCheck={isSameSymbolsSequence}  
         />
     </main>
