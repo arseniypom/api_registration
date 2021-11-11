@@ -16,11 +16,11 @@ main {
 }
 
 .body {
-    min-height: calc(100vh - $header-height-lg - $header-margin-bottom-lg);
+    min-height: calc(90vh - #{$header-height-lg} - #{$header-margin-bottom-lg});
 }
 @media (max-width: 1023px) {
     .body {
-        min-height: calc(100vh - $header-height-sm - $header-margin-bottom-sm);
+        min-height: calc(90vh - #{$header-height-sm} - #{$header-margin-bottom-sm});
     }
 }
 
@@ -119,7 +119,6 @@ main {
 }
 
 .page-content-button {
-    display: inline-block;
     font-family: "VTB Group UI";
     font-weight: 500;
     line-height: 1.5rem;
@@ -192,6 +191,21 @@ main {
             margin: 1.75rem auto 0;
         }
     }
+
+    .page-content-actions-login {
+        text-align: center;
+        margin-top: 2rem;
+
+        p {
+            width: auto !important;
+            display: inline;
+        }
+
+        .page-content-link {
+            margin: 0 0 0 .75rem;
+            display: inline;
+        }
+    }
 }
 
 
@@ -207,15 +221,6 @@ main {
         &-actions {
             flex-direction: column;
             justify-content: center;
-        }
-    }
-
-    .page-content-actions-login {
-        text-align: center;
-        margin-top: 2rem;
-
-        .page-content-link {
-            margin-top: .5rem;
         }
     }
 

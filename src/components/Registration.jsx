@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useMediaQuery } from 'react-responsive';
 
 import PasswordsSet from "./PasswordsSet";
 import PasswordRequirements from "./PasswordRequirements";
@@ -32,6 +33,9 @@ function Registration() {
         }
         setButtonEnabled(true)
     })
+
+    // Проверка размера экрана
+    const isMobile = useMediaQuery({ query: '(max-width: 1023px)' })
 
     // Результаты валидации, происходящей в компоненте PasswordsSet
     const [isSymbolTypes, setSymbolTypes] = useState(null);
@@ -69,7 +73,7 @@ function Registration() {
         });
     }
 
-    return <main className="body">
+    return <main className="body registration">
         <div className="registration-content">
             <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Регистрация</h1>
@@ -139,7 +143,15 @@ function Registration() {
                 />
                 <label className="conditions_accept-wrapper-label" htmlFor="organizationRegulations"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href={pdnDocument} target="_blank">правила Положения об организации обработки персональных данных в Банке ВТБ (ПАО)</a></p></label>
             </div>
-
+            {
+                isMobile &&
+                    <PasswordRequirements
+                        symbolsCheck={isSymbolTypes}
+                        lengthCheck={isLengthCorrect}
+                        usernameInPasswordCheck={isPasswordContainUsername}
+                        sameSymbolsCheck={isSameSymbolsSequence}  
+                    />
+            }
             <div className="page-content-actions">
                 <button disabled={!isButtonEnabled} className="page-content-button page-content-button-blue registration-button-blue" type="submit">Регистрация</button>
                 <div className="page-content-actions-login">
@@ -148,12 +160,16 @@ function Registration() {
                 </div>
             </div>
         </div>
-        <PasswordRequirements
-            symbolsCheck={isSymbolTypes}
-            lengthCheck={isLengthCorrect}
-            usernameInPasswordCheck={isPasswordContainUsername}
-            sameSymbolsCheck={isSameSymbolsSequence}  
-        />
+
+        {
+            !isMobile &&
+            <PasswordRequirements
+                symbolsCheck={isSymbolTypes}
+                lengthCheck={isLengthCorrect}
+                usernameInPasswordCheck={isPasswordContainUsername}
+                sameSymbolsCheck={isSameSymbolsSequence}  
+            />
+        }
     </main>
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from 'react-responsive';
 
 import PasswordsSet from "./PasswordsSet";
 import PasswordRequirements from "./PasswordRequirements";
@@ -9,6 +10,9 @@ function RestorePassword() {
         password: "",
         repeatPassword: ""
     });
+
+    // Проверка размера экрана
+    const isMobile = useMediaQuery({ query: '(max-width: 1023px)' })
 
     // Результаты валидации, происходящей в компоненте PasswordsSet
     const [isSymbolTypes, setSymbolTypes] = useState(null);
@@ -46,17 +50,29 @@ function RestorePassword() {
                 validation={passwordValidation}
             />
 
+            {
+                isMobile &&
+                    <PasswordRequirements
+                        symbolsCheck={isSymbolTypes}
+                        lengthCheck={isLengthCorrect}
+                        usernameInPasswordCheck={isPasswordContainUsername}
+                        sameSymbolsCheck={isSameSymbolsSequence}  
+                    />
+            }
+
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue registration-button-blue" type="submit">Сохранить</button>
             </div>
         </div>
-        <PasswordRequirements
-            symbolsCheck={isSymbolTypes}
-            lengthCheck={isLengthCorrect}
-            usernameInPasswordCheck={isPasswordContainUsername}
-            passwordSafetyCheck={passwordSafety}
-            sameSymbolsCheck={isSameSymbolsSequence}  
-        />
+        {
+            !isMobile &&
+            <PasswordRequirements
+                symbolsCheck={isSymbolTypes}
+                lengthCheck={isLengthCorrect}
+                usernameInPasswordCheck={isPasswordContainUsername}
+                sameSymbolsCheck={isSameSymbolsSequence}  
+            />
+        }
     </main>
 }
 
