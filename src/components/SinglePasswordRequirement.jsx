@@ -15,10 +15,12 @@ function SinglePasswordRequirement(props) {
     } else {
         imgSource = arrowImg
     }
-    return <div className="pass_requirements-content-condition">
-    <img className="pass_requirements-content-condition-img" src={imgSource} alt="status"></img>
-    <p className="pass_requirements-content-condition-p page-content-muted">{props.text}</p>
-</div>
+    return (
+        <div className="pass_requirements-content-condition">
+            <img className="pass_requirements-content-condition-img" src={imgSource} alt="status"></img>
+            <p className={`pass_requirements-content-condition-p page-content-muted ${props.addClass ? props.addClass : ""}`}>{props.text}</p>
+        </div>
+    )
 }
 
 export default SinglePasswordRequirement;

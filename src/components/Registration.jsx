@@ -69,7 +69,7 @@ function Registration() {
         });
     }
 
-    return <main className="">
+    return <main className="body">
         <div className="registration-content">
             <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Регистрация</h1>

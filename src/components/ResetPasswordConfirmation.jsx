@@ -17,7 +17,7 @@ function Confirmation() {
         setConfirmationCode(value);
     }
 
-    return <main className="">
+    return <main className="body">
         
         <Image img={confirmationImg} style={"decorative_image"}/>
         <div className="confirmation-content">

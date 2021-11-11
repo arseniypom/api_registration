@@ -25,7 +25,7 @@ function PasswordRequirements(props) {
     return <div className="pass_requirements-content">
         <p className="pass_requirements-content-p">Требования к паролю</p>
         <SinglePasswordRequirement status={props.symbolsCheck} text="Минимальное число типов символов пароля: 3 типа"/>
-        <SinglePasswordRequirement status={props.lengthCheck} text="Минимальная длина пароля: 8 символов"/>
+        <SinglePasswordRequirement status={props.lengthCheck} addClass="pass_requirements-content-condition-p-short" text="Минимальная длина пароля: 8 символов"/>
         <SinglePasswordRequirement status={props.usernameInPasswordCheck} text="Пароль не должен содержать имя пользователя"/>
         <SinglePasswordRequirement status={checkPasswordSafety(passwordSafety)} text={"Минимальная оценка надежности пароля: " + passwordSafety}/>
         <SinglePasswordRequirement status={props.sameSymbolsCheck} text="Максимальное количество одинаковых символов подряд: 3 символа"/>

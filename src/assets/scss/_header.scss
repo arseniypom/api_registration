@@ -1,7 +1,17 @@
 /* ----------------------- HEADER ----------------------- */
+.header {
+    margin-bottom: $header-margin-bottom-lg;
+}
+
+@media (max-width: 1023px) {
+    .header {
+        margin-bottom: $header-margin-bottom-sm;
+    }
+}
+
 .top-menu {
     width: 100%;
-    height: 4.5rem;
+    height: $header-height-lg;
 
     display: flex;
     align-items: center;
@@ -25,7 +35,7 @@
 @media (max-width: 1023px) {
     .top-menu {
         width: 100%;
-        height: 3rem;
+        height: $header-height-sm;
 
         &-logo {
             width: 3.529rem;

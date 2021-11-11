@@ -31,7 +31,7 @@ function Login() {
         })
     }
 
-    return <main className="">
+    return <main className="body">
         <Image img={loginImg} style={"decorative_image"}/>
         <div className="page-content">
             <p className="page-content-p">Портал разработчика API</p>
