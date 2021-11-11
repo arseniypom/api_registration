@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8aafde63.chunk.css",
+    "main.js": "/static/js/main.62fedb33.chunk.js",
+    "main.js.map": "/static/js/main.62fedb33.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a7850060.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a7850060.js.map",
+    "static/js/2.f323a643.chunk.js": "/static/js/2.f323a643.chunk.js",
+    "static/js/2.f323a643.chunk.js.map": "/static/js/2.f323a643.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8aafde63.chunk.css.map": "/static/css/main.8aafde63.chunk.css.map",
+    "static/js/2.f323a643.chunk.js.LICENSE.txt": "/static/js/2.f323a643.chunk.js.LICENSE.txt",
+    "static/media/Arrow.e4bf42d6.svg": "/static/media/Arrow.e4bf42d6.svg",
+    "static/media/Correct.3c1c44e6.svg": "/static/media/Correct.3c1c44e6.svg",
+    "static/media/Error.dd7d2cec.svg": "/static/media/Error.dd7d2cec.svg",
+    "static/media/style.scss": "/static/media/VTBGroupUI-Regular.f1867df9.ttf",
+    "static/media/closed_eye.b1e17d58.svg": "/static/media/closed_eye.b1e17d58.svg",
+    "static/media/login_API-07.2e0cfba5.png": "/static/media/login_API-07.2e0cfba5.png",
+    "static/media/login_API-08.1612252f.png": "/static/media/login_API-08.1612252f.png",
+    "static/media/login_API-09.7c3df448.png": "/static/media/login_API-09.7c3df448.png",
+    "static/media/login_API-10.5d92a237.png": "/static/media/login_API-10.5d92a237.png",
+    "static/media/obrabotkа_pdn_banka_vtb_pao.4d6b83d3.pdf": "/static/media/obrabotkа_pdn_banka_vtb_pao.4d6b83d3.pdf",
+    "static/media/opened_eye.97f2e7ea.svg": "/static/media/opened_eye.97f2e7ea.svg",
+    "static/media/Оферта.80eb7550.pdf": "/static/media/Оферта.80eb7550.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a7850060.js",
+    "static/js/2.f323a643.chunk.js",
+    "static/css/main.8aafde63.chunk.css",
+    "static/js/main.62fedb33.chunk.js"
+  ]
+}
