@@ -38,15 +38,11 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
     // -webkit-box-shadow: 0 0 0px 1000px #000 inset;
     transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #E2E5E9;
+    -webkit-text-fill-color: #8A96A8;
 }
 
 
 a:hover, button:hover {
     text-decoration: none;
     cursor: pointer;
-}
-
-.main_div {
-    height: 90%;
 }

@@ -7,13 +7,13 @@ function PasswordRequirements(props) {
     const [passwordSafety, setPasswordSafety] = React.useState(0)
 
     React.useEffect(() => {
-        setPasswordSafety(Number(props.symbolsCheck) + Number(props.lengthCheck) + Number(props.usernameInPasswordCheck) + Number(props.sameSymbolsCheck))
+        setPasswordSafety(Number(props.symbolsCheck)*2 + Number(props.lengthCheck)*2 + Number(props.usernameInPasswordCheck)*2 + Number(props.sameSymbolsCheck)*2)
     })
 
     function checkPasswordSafety(number) {
         if (number === 0) {
             return null
-        } else if (number > 0 && number < 3) {
+        } else if (number < 8) {
             return false
         } else {
             return true

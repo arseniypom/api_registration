@@ -5,7 +5,7 @@ import {Header, Login, Registration, ResetPassword, RestorePassword, EmailConfir
 
 
 function App() {
-    return <div className="main_div">
+    return <>
         <Header />
         <Switch>
             <Route exact path="/" component={Login} />
@@ -16,7 +16,7 @@ function App() {
             <Route exact path="/password-reset-confirmation" component={ResetPasswordConfirmation} />
             <Route exact path="/congratulations" component={Congratulations} />
         </Switch>
-    </div>
+    </>
 }
 
 export default App;

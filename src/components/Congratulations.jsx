@@ -7,7 +7,7 @@ import Image from "./Image";
 
 function Congratulations() {
 
-    return <div className="body congratulations">
+    return <main className="body congratulations">
         <div className="congratulations-content">
             <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Поздравляем</h1>
@@ -17,7 +17,7 @@ function Congratulations() {
             </div>
         </div>
         <Image img={congratsImg} style={"congratulations-decorative_image"}/>
-    </div>
+    </main>
 }
 
 export default Congratulations;
