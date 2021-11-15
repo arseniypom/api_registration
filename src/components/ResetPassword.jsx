@@ -19,12 +19,12 @@ function ResetPassword() {
         <div className="page-content">
             <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Сброс пароля</h1>
-            <p className="page-content-p page-content-description">Если вы забыли пароль от своей учётной записи, отправьте запрос на сброс пароля</p>
+            <p className="page-content-p page-content-description">Если вы хотите изменить или восстановить пароль от своей учетной записи, отправьте запрос на зарегистрированный адрес электронной почты и перейдите по ссылке из письма для обновления пароля.</p>
             <EmailInput 
                 emailHandle={handleInput}
                 currentValue={email}
             />
-            <p className="page-content-p page-content-muted reset_pass-instructions">Инструкции по сбросу пароля будут отправлены на ваш зарегистрированный адрес электронной почты</p>
+            {/* <p className="page-content-p page-content-muted reset_pass-instructions">Инструкции по сбросу пароля будут отправлены на ваш зарегистрированный адрес электронной почты</p> */}
             <div className="page-content-actions">
                 <button className="page-content-button page-content-button-blue reset_pass-button-blue" type="submit">Отправить</button>
                 <a href="/" className="page-content-button page-content-button-transparent">Отмена</a>

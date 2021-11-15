@@ -131,7 +131,7 @@ function Registration() {
                     onChange={handleCheckboxInput}
                 />
                 {/* Необходимо добавить аттрибут href ссылке ниже */}
-                <label className="conditions_accept-wrapper-label" htmlFor="termsOfUse"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href={agreementDocument} target="_blank">пользовательское соглашение</a></p></label>
+                <label className="conditions_accept-wrapper-label" htmlFor="termsOfUse"><p className="conditions_accept-wrapper-p">Принимаю <a className="" href={agreementDocument} target="_blank">Пользовательское соглашение</a></p></label>
             </div>
             <div className="conditions_accept-wrapper conditions_accept-wrapper-second">
                 <input

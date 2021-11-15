@@ -11,7 +11,7 @@ function Congratulations() {
         <div className="congratulations-content">
             <p className="page-content-p">Портал разработчика API</p>
             <h1 className="page-content-h1">Поздравляем</h1>
-            <p className="congratulations-content-p">Вы успешно зарегистрировались на портале API</p>
+            <p className="congratulations-content-p">Вы успешно зарегистрировались на портале разработчика API</p>
             <div className="page-content-actions">
                 <a href="/"><button className="page-content-button page-content-button-blue login-button-blue" type="submit">Войти</button></a>
             </div>
